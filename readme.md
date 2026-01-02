@@ -7,8 +7,6 @@ You can copy this code, replace the content in your current `README.md` file, sa
 ```markdown
 # 🎵 Music Playlist Management API
 
-![Node.js](https://img.shields.io/badge/Node.js-green) ![Express.js](https://img.shields.io/badge/Express.js-black) ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-
 A simple **CRUD API** for managing a music playlist, built with **Node.js**, **Express**, and **JSON file storage**.
 
 This project allows you to:
