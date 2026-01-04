@@ -1,92 +1,48 @@
-Here is the updated `README.md` file tailored specifically for your **Music Playlist Application**.
+# 🐝 BookHive - Digital Library Archive
 
-You can copy this code, replace the content in your current `README.md` file, save it, and then I will show you how to push the changes.
+## 📌 Project Overview
+**BookHive** is a modern, full-stack library management system featuring a **Glassmorphism UI** (translucent cards with vibrant gradients). It allows administrators to archive books, manage inventory in real-time, and filter records dynamically.
 
-### **1. Copy this Code for `README.md**`
-
-```markdown
-# 🎵 Music Playlist Management API
-
-![Node.js](https://img.shields.io/badge/Node.js-green) ![Express.js](https://img.shields.io/badge/Express.js-black) ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-
-A simple **CRUD API** for managing a music playlist, built with **Node.js**, **Express**, and **JSON file storage**.
-
-This project allows you to:
-
-* **Create**: Add new songs to the playlist.
-* **Read**: Retrieve the full playlist or find a specific song by ID.
-* **Update**: Update song details (PUT).
-* **Delete**: Remove a song from the playlist.
+The project demonstrates secure **CRUD operations** (Create, Read, Update, Delete) with a Node.js/Express backend and MongoDB database.
 
 ---
-
-## 🗂 Folder Structure
-
-```text
-Music Playlist App/
-│── app.js                # Entry point
-│── package.json          # Dependencies
-│── node_modules/
-│
-├── Controllers/
-│   └── musicController.js # Logic for handling requests
-│
-├── Routes/
-│   └── musicRoutes.js     # API Route definitions
-│
-├── data/
-│   └── songs.json         # JSON Database
-│
-└── screenshots/          # Images for documentation
-    ├── get-request.png
-    ├── post-request.png
-    ├── put-request.png
-    └── delete-request.png
-
-```
-
 ---
 
-## 🚀 Getting Started
-
-1. Install dependencies:
-
-```bash
-npm init -y
-npm install express
-```
-
-2. Run the API:
-
-```bash
-node app.js
-```
-
-The API will run on `http://localhost:3000`.
+## 🛠️ Tech Stack
+- **Frontend:** HTML5, CSS3 (Glassmorphism), Vanilla JavaScript
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB (Mongoose ODM)
 
 ---
-## 📌 API Endpoints
-
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| **GET** | `/songs` | Get all songs |
-| **GET** | `/songs/:id` | Get song by ID |
-| **POST** | `/songs` | Add a new song |
-| **PUT** | `/songs/:id` | Update song details |
-| **DELETE** | `/songs/:id` | Delete a song |
-
----
-
-# 🖼 Screenshots
-
-Here are the results from testing the API in Postman:
-### GET Request Result
-![GET Request](screenshots/get-request.png)
-### PUT Request Result
-![PUT Request](screenshots/put-request.png)
-### POST Request Result
-![POST Request](screenshots/post-request.png)
-### DELETE Request Result
-![DELETE Request](screenshots/delete-request.png)
+### ⚡ Core Functionalities
+- **Add Books:** Archive new titles with metadata (Author, Year, Category, Stock).
+- **Smart Filters (Read):**
+  - **New Arrivals:** One-click filter to show only books published after **2015**.
+  - **Category Filter:** dedicated view for "Fiction" books.
+- **Inventory Control (Update):**
+  - Interactive `[+]` and `[-]` buttons to adjust stock instantly.
+  - **Safety Check:** Backend prevents stock from dropping below zero.
+- **Secure Deletion (Delete):**
+  - **Constraint:** System blocks deletion if the book currently has active stock (`Copies > 0`).
 
 ---
+## 📸 Project Screenshots (Testing)
+
+### 1. Dashboard & Create Operation
+**Condition Met:** "Insert minimum 7 books" & "Read All"
+![Dashboard](screenshots/add-1.png)
+![Dashboard](screenshots/add-2.png)
+### 2. Filtering Logic (New > 2015)
+**Condition Met:** "Books after year 2015"
+*Below: The result of clicking 'Show New'. Only recent books like 'Faster Than Lightning' (2016) are visible.*
+![Filter Test](screenshots/filter.png)
+### 3. Delete Restriction (Error Handling)
+**Condition Met:** "Remove book if copies = 0"
+*Below: Browser alert preventing the deletion of a book that is still in stock.*
+![Delete Error](screenshots/delete.png)
+### 4. Negative Stock Prevention (Error Handling)
+**Condition Met:** "Negative stock prevention"
+*Below: The system prevents decreasing stock below zero.*
+![Stock Error](screenshots/negative_stock.png)
+
+

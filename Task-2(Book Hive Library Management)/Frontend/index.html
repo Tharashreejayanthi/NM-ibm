@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookHive Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <header>
+            <h1>Digital Library Archive</h1>
+        </header>
+
+        <section class="glass-card form-section">
+            <div class="input-row">
+                <input type="text" id="b-title" placeholder="Enter Book Name...">
+                <input type="text" id="b-author" placeholder="Author...">
+            </div>
+            
+            <div class="input-row">
+                <select id="b-category">
+                    <option value="Fiction">Fiction</option>
+                    <option value="Business">Business</option>
+                    <option value="History">History</option>
+                    <option value="Tech">Technology</option>
+                    <option value="Science">Science</option>
+                    <option value="Design">Design</option>
+                </select>
+                <input type="number" id="b-year" placeholder="Year">
+                <input type="number" id="b-copies" placeholder="Stock Qty">
+            </div>
+
+            <button onclick="submitBook()" class="action-btn">Upload to Database</button>
+        </section>
+
+        <section class="list-section">
+            <div class="list-head">
+                <h3>Library Inventory</h3>
+                
+                <div class="filters">
+                    <button onclick="fetchLibrary('recent')" class="glass-btn-sm">New (>2015)</button>
+                    <button onclick="fetchLibrary('fiction')" class="glass-btn-sm">Fiction</button>
+                    <button onclick="fetchLibrary()" class="glass-btn-sm">Show All</button>
+                </div>
+            </div>
+            
+            <ul id="library-list">
+                </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
